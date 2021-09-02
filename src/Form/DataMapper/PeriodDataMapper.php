@@ -60,7 +60,7 @@ class PeriodDataMapper implements DataMapperInterface
     /**
      * @param Period|null $viewData
      */
-    public function mapDataToForms($viewData, iterable $forms): void
+    public function mapDataToForms($viewData, $forms): void
     {
         // there is no data yet, so nothing to prepopulate
         if (null === $viewData) {
@@ -87,7 +87,7 @@ class PeriodDataMapper implements DataMapperInterface
      * @param iterable $forms
      * @param mixed    $viewData
      */
-    public function mapFormsToData(iterable $forms, &$viewData): void
+    public function mapFormsToData($forms, &$viewData): void
     {
         /** @var FormInterface[] $forms */
         $forms = iterator_to_array($forms); // @phpstan-ignore-line
